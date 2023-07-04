@@ -46,12 +46,62 @@ startButton.addEventListener("click",startQuiz);
 function startQuiz (){
   startButton.style.display = "none";
   timerInterval = setInterval(updateTimer, 1000);
-  displayQuestion
+  displayQuestion();
 }
 
 //function to start quiz 
 function displayQuestion(){
-  const currentQuizData = quizData[currentQuestion];
+  const currentQuizData = quizQuestions[currentQuestion];
   questionElement.innerText = currentQuizData.question;
   optionsElement.innerHTML = "";
+
+  for (let i=0; i < currentQuizData.options.length; i++)
+  {
+    const option = document.createElement("li");
+    option.addEventListener("click", () => checkAnswer(i));
+    optionsElement.appendChild(option);
+  }
+}
+
+//check answers
+function checkAnswer(answerIndex) {
+  const currentQuizData = quizQuestions[currentQuestion];
+  if (answerIndex === currentQuizData.answer){
+    //right answer
+    currentQuestion++;
+    if (currentQuestion < quizQuestions.length){
+      displayQuestion();
+    } else {
+      endQuiz ();
+    }
+  } else {
+    //wrong answer 
+    time -= 10; //lose 10 seconds on timer for a wrong answer 
+  }
+}
+
+//update time
+function updateTimer() {
+  time--;
+  if (time <= 0) {
+    endQuiz ();
+  }
+}
+
+//end
+function endQuiz() {
+  clearInterval(timerInterval);
+  questionElement.innerText = "Completed!";
+  optionsElement.innerHTML = "";
+  initialsInput.style.display = "block";
+  submitButton.style.display = "block";
+}
+
+//save score and initials
+submitButton.addEventListener("click", saveScore);
+function saveScore() {
+  const initials = initialsInput.value;
+  // Save the initials and score to a data structure
+  console.log("Initials: ", initials);
+  console.log("Score: ", time);
 }
