@@ -1,3 +1,4 @@
+const timerElement = document.getElementById("timer");
 //question section
 const quizQuestions = [
   {
@@ -55,9 +56,9 @@ function displayQuestion(){
   questionElement.innerText = currentQuizData.question;
   optionsElement.innerHTML = "";
 
-  for (let i=0; i < currentQuizData.options.length; i++)
-  {
+  for (let i = 0; i < currentQuizData.options.length; i++) {
     const option = document.createElement("li");
+    option.textContent = String.fromCharCode(65 + i) + ". " + currentQuizData.options[i];
     option.addEventListener("click", () => checkAnswer(i));
     optionsElement.appendChild(option);
   }
@@ -86,6 +87,7 @@ function updateTimer() {
   if (time <= 0) {
     endQuiz ();
   }
+  timerElement.innerText = time;
 }
 
 //end
