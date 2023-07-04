@@ -28,6 +28,31 @@ const quizQuestions = [
     options: ["A","B","C","D"],
     answer: 1
   },
+  {
+    question: "question 6",
+    options: ["A","B","C","D"],
+    answer: 0
+  },
+  {
+    question: "question 7",
+    options: ["A","B","C","D"],
+    answer: 2
+  },
+  {
+    question: "question 8",
+    options: ["A","B","C","D"],
+    answer: 3
+  },
+  {
+    question: "question 9",
+    options: ["A","B","C","D"],
+    answer: 1
+  },
+  {
+    question: "question 10",
+    options: ["A","B","C","D"],
+    answer: 0
+  },
 ];
 
 //variables
