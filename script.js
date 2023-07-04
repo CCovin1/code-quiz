@@ -172,8 +172,6 @@ function saveScore(){
 }
 displayHighScore();
 
-// ...
-
 // Function to save the score and initials
 function saveScore() {
   const initials = initialsInput.value;
@@ -190,7 +188,6 @@ function saveScore() {
   }
 }
 
-// ...
 
 // Function to display the high score
 function displayHighScore() {
@@ -202,8 +199,6 @@ function displayHighScore() {
   highScoreElement.textContent = "High Score: " + highScore.toString();
 }
 
-// ...
-
 // endQuiz function
 function endQuiz() {
   clearInterval(timerInterval);
@@ -214,7 +209,6 @@ function endQuiz() {
   submitButton.style.display = "block";
 }
 
-// ...
 
 // Place the event listener for submitButton outside of the saveScore function
 submitButton.addEventListener("click", saveScore);
