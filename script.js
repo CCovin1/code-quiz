@@ -1,4 +1,6 @@
 const timerElement = document.getElementById("timer");
+const resultContainer = document.getElementById("result-container");
+const highScoreElement = document.getElementById("highScore");
 //question section
 const quizQuestions = [
   {
@@ -32,6 +34,7 @@ const quizQuestions = [
 let currentQuestion = 0;
 let time = 60;
 let timeInterval;
+let highScore = 0;
 
 //elements
 const startButton = document.getElementById("start-button");
@@ -106,4 +109,87 @@ function saveScore() {
   // Save the initials and score to a data structure
   console.log("Initials: ", initials);
   console.log("Score: ", time);
+
+  const quizResults = [];
+  
+  //end
+  function endQuiz() {
+    clearInterval(timerInterval);
+    timer.style.display = 'none'
+    questionElement.innerText = "Completed!";
+  optionsElement.innerHTML = "";
+  initialsInput.style.display = "block";
+  submitButton.style.display = "block";
+  localStorage.setItem("highScore", highScore.toString());
 }
+  function displayHighScore(){
+    const storedHighScore = localStorage.getItem("highScore");
+    if (storedHighScore){
+      highScore = parseInt(storedHighScore);
+    }
+
+    const highScoreElement = document.getElementById("highScore");
+    highScoreElement.textcontent = highScore.toString ();
+}
+
+//save score and initials 
+submitButton.addEventListener("click", saveScore);
+function saveScore(){
+  const initials = initialsInput.value;
+  console.log("initials: ", initials)
+  console.log("Score: ",time);
+}
+  if (time > highScore) {
+    highScore = time;
+    console.log("New High Score ", highScore);
+  highScoreElement.textContent = "High Score: " + highScore.toString();
+  }
+}
+displayHighScore();
+
+// ...
+
+// Function to save the score and initials
+function saveScore() {
+  const initials = initialsInput.value;
+  console.log("Initials: ", initials);
+  console.log("Score: ", time);
+
+  // Save the score and initials to a data structure (e.g., quizResults array)
+
+  if (time > highScore) {
+    highScore = time;
+    console.log("New High Score: ", highScore);
+    highScoreElement.textContent = "High Score: " + highScore.toString();
+    localStorage.setItem("highScore", highScore.toString());
+  }
+}
+
+// ...
+
+// Function to display the high score
+function displayHighScore() {
+  const storedHighScore = localStorage.getItem("highScore");
+  if (storedHighScore) {
+    highScore = parseInt(storedHighScore);
+  }
+
+  highScoreElement.textContent = "High Score: " + highScore.toString();
+}
+
+// ...
+
+// endQuiz function
+function endQuiz() {
+  clearInterval(timerInterval);
+  timerElement.style.display = "none";
+  questionElement.innerText = "Completed!";
+  optionsElement.innerHTML = "";
+  initialsInput.style.display = "block";
+  submitButton.style.display = "block";
+}
+
+// ...
+
+// Place the event listener for submitButton outside of the saveScore function
+submitButton.addEventListener("click", saveScore);

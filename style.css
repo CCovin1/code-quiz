@@ -1,0 +1,60 @@
+/* style.css */
+body {
+  background-color: lightgray; 
+}
+
+#quiz-container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#question {
+  margin-bottom: 20px;
+}
+
+#options {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#options li {
+  margin-bottom: 10px;
+}
+
+#start-button,
+#submit-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#initials {
+  display: none;
+  margin-top: 20px;
+}
+
+#timer {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#highScore {
+  margin-bottom: 20px;
+}
+
+#highScore ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#highScore li {
+  margin-bottom: 5px;
+}
