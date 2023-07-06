@@ -1,12 +1,14 @@
 /* style.css */
 body {
-  background-color: lightgray; 
+  background-color: rgb(151, 145, 145);
 }
 
 #quiz-container {
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
+  padding: 20%;
+  
 }
 
 h1 {
