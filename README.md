@@ -1,7 +1,9 @@
 # Quiz
 
 This is a simple quiz application built using HTML, CSS, and JavaScript.
-
+## Usage
+Link to quiz - https://ccovin1.github.io/code-quiz/
+![alt.text](./cqp.png) 
 ## How to Use
 
 1. Open the `index.html` file in your web browser.
