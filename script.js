@@ -4,52 +4,52 @@ const highScoreElement = document.getElementById("highScore");
 //question section
 const quizQuestions = [
   {
-    question: "question 1",
+    question: "question 1 answer D",
     options: ["A","B","C","D"],
     answer: 3
   },
   {
-    question: "question 2",
+    question: "question 2 answer A",
     options: ["A","B","C","D"],
     answer: 0
   },
   {
-    question: "question 3",
+    question: "question 3 answer C",
     options: ["A","B","C","D"],
     answer: 2
   },
   {
-    question: "question 4",
+    question: "question 4 answer D",
     options: ["A","B","C","D"],
     answer: 3
   },
   {
-    question: "question 5",
+    question: "question 5 answer B",
     options: ["A","B","C","D"],
     answer: 1
   },
   {
-    question: "question 6",
+    question: "question 6 answer A",
     options: ["A","B","C","D"],
     answer: 0
   },
   {
-    question: "question 7",
+    question: "question 7 answer C",
     options: ["A","B","C","D"],
     answer: 2
   },
   {
-    question: "question 8",
+    question: "question 8 answer D",
     options: ["A","B","C","D"],
     answer: 3
   },
   {
-    question: "question 9",
+    question: "question 9 answer B",
     options: ["A","B","C","D"],
     answer: 1
   },
   {
-    question: "question 10",
+    question: "question 10 answer A",
     options: ["A","B","C","D"],
     answer: 0
   },
